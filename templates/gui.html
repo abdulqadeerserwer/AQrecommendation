@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Movie Recommendation System</title>
+  </head>
+  <body>
+    <h1 class="display-3 text-center py-2">Movie Recommender System</h1>
+    <hr />
+    <div class="movie">
+      <div class="row">
+        <div class="col-md-4 offset-md-1 "></div>
+        <div class="col-md-6">
+          <h4 class="h2 mb-3">
+            <strong>{{current_movie_title}</strong>
+          </h4>
+          <h5 class="h4 mb-2">Distance : {{current_movie_distance}}</h5>
+          <h5 class="h4 mb-2">Ratings : {{current_movie_ratings]}}</h5>
+        </div>
+      </div>
+    </div>
+    <section class="recommendations mt-5 py-5">
+      <h3 class="h3">Recommendations</h3>
+      <hr />
+
+      {% for index in range(0,5)%}
+
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{titles[index]}}</h5>
+          <p class="card-text mt-4">
+            Distance : {{distances[index]}} 
+            <br>
+            Ratings : {{ratings[index]}}
+          </p>
+          <button class="btn-btn-primary-outline btn-block">Details</button>
+        </div>
+      </div>
+
+      {% endfor %}
+
+  </body>
+</html>
